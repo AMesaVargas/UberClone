@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F3F4F6', // Fondo gris texturizado para destacar las tarjetas
+    backgroundColor: '#F3F4F6',
     paddingHorizontal: 16,
     paddingTop: 24,
   },

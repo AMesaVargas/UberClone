@@ -9,7 +9,7 @@ import { getUserPayments } from '../storage/FirestoreService';
 import styles from '../styles/TripHistoryStyles';
 
 const PAYMENT_ICONS = {
-  mercadopago: '💙',
+  mercadopago: '🤝',
   card: '💳',
 };
 

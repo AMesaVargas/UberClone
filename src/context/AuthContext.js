@@ -8,8 +8,6 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Aquí eventualmente podrías agregar el listener onAuthStateChanged de Firebase
-    // para mantener la sesión activa al reiniciar la app.
     setLoading(false);
   }, []);
 

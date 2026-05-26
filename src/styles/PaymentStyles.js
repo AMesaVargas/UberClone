@@ -354,7 +354,6 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
   },
 
-  // ─── SUCCESS STATE ─────────────────────────────────────────────
   successContainer: {
     flex: 1,
     justifyContent: 'center',

@@ -1,30 +1,29 @@
-export const validateTripHistory = (trips) => {
-    if (!trips || trips.length === 0){
-        return {isValid: false, error: 'No trips found'};
-    }
+export const validateTripHistory = trips => {
+  if (!trips || trips.length === 0) {
+    return { isValid: false, error: 'No trips found' };
+  }
 
-    return {isValid: true, error: null};
+  return { isValid: true, error: null };
 };
 
 export const filterTripsByStatus = (trips, status) => {
-    if (!trips || trips.length === 0) {
-        return {success: false, error: 'No trips found'}; 
-    }
-    const Valid_status= ['completed', 'cancelled'];
-    if (!Valid_status.includes(status)) {
-        return {success: false , error: 'Invalid status filter'};
-    }
+  if (!trips || trips.length === 0) {
+    return { success: false, error: 'No trips found' };
+  }
+  const Valid_status = ['completed', 'cancelled'];
+  if (!Valid_status.includes(status)) {
+    return { success: false, error: 'Invalid status filter' };
+  }
 
-    if (status == 'al'){
-        return {success: true, trips};
-    }
+  if (status == 'all') {
+    return { success: true, trips };
+  }
 
-    const filteredTrips = trips.filter((trip) => trip.status === status);
-     return { success: true, trips: filteredTrips };
+  const filteredTrips = trips.filter(trip => trip.status === status);
+  return { success: true, trips: filteredTrips };
 };
 
-export const calculateTotalSpent = (trips) => {
-
+export const calculateTotalSpent = trips => {
   if (!trips || trips.length === 0) {
     return { success: false, error: 'No trips found' };
   }

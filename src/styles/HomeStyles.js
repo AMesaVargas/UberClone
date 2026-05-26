@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
     height: '100%',
   },
 
-  // ─── BOTTOM CARD ───────────────────────────────────────────────
   bottomCard: {
     position: 'absolute',
     bottom: 0,
@@ -40,7 +39,6 @@ const styles = StyleSheet.create({
     marginBottom: 18,
   },
 
-  // ─── HEADER ────────────────────────────────────────────────────
   headerRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -63,7 +61,6 @@ const styles = StyleSheet.create({
     fontWeight: '400',
   },
 
-  // ─── INPUTS ────────────────────────────────────────────────────
   inputWrapper: {
     backgroundColor: '#F7F7F7',
     borderRadius: 16,
@@ -106,7 +103,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
 
-  // ─── SUGGESTIONS ───────────────────────────────────────────────
   suggestionContainer: {
     backgroundColor: '#fff',
     borderRadius: 14,
@@ -140,7 +136,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-  // ─── SECTION LABEL ─────────────────────────────────────────────
   sectionLabel: {
     fontSize: 11,
     fontWeight: '700',
@@ -151,7 +146,6 @@ const styles = StyleSheet.create({
     marginTop: 6,
   },
 
-  // ─── VEHICLE SELECTOR ──────────────────────────────────────────
   vehicleContainer: {
     flexDirection: 'row',
     gap: 10,
@@ -189,7 +183,6 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 
-  // ─── TRIP INFO ROW ─────────────────────────────────────────────
   tripInfoRow: {
     flexDirection: 'row',
     gap: 10,
@@ -224,8 +217,6 @@ const styles = StyleSheet.create({
     color: '#999',
     fontWeight: '500',
   },
-
-  // ─── REQUEST BUTTON ────────────────────────────────────────────
   requestButton: {
     backgroundColor: '#0A0A0A',
     borderRadius: 18,
@@ -242,7 +233,6 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
   },
 
-  // ─── FLOATING SEARCH BUTTON ────────────────────────────────────
   floatingSearchButton: {
     position: 'absolute',
     top: Platform.OS === 'ios' ? 60 : 40,
@@ -293,7 +283,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 
-  // ─── CLOSE BUTTON ──────────────────────────────────────────────
   closeButton: {
     backgroundColor: '#F3F3F3',
     width: 36,

@@ -1,5 +1,4 @@
 const authMiddleware = formData => {
-  // validar paymentMethod
   if (!formData.paymentMethod) {
     return {
       passed: false,
@@ -7,7 +6,6 @@ const authMiddleware = formData => {
     };
   }
 
-  // SOLO validar tarjeta si el método es card
   if (formData.paymentMethod === 'card') {
     if (!formData.cardNumber || formData.cardNumber.trim() === '') {
       return {

@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB', // Fondo gris ultra claro y limpio
+    backgroundColor: '#F9FAFB', 
     alignItems: 'center',
     paddingTop: 50,
     paddingHorizontal: 24,
@@ -11,12 +11,10 @@ export default StyleSheet.create({
   avatarContainer: {
     marginBottom: 20,
     borderRadius: 60,
-    // Sombra suave para dar volumen (iOS)
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.08,
     shadowRadius: 12,
-    // Sombra para Android
     elevation: 4,
   },
   avatarImage: {
@@ -69,12 +67,12 @@ export default StyleSheet.create({
     fontWeight: '500',
   },
   logoutButton: {
-    backgroundColor: '#EF4444', // Rojo sutil de alerta
+    backgroundColor: '#EF4444', 
     width: '100%',
     paddingVertical: 16,
     borderRadius: 12,
     alignItems: 'center',
-    marginTop: 'auto', // Empuja el botón al fondo de la pantalla
+    marginTop: 'auto',
     marginBottom: 24,
   },
   logoutText: {

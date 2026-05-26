@@ -29,13 +29,13 @@ const BottomTabs = () => {
 
           return <Icon name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: '#0A0A0A',   
-        tabBarInactiveTintColor: '#8E8E93', 
+        tabBarActiveTintColor: '#0A0A0A',
+        tabBarInactiveTintColor: '#8E8E93',
         tabBarStyle: {
-          backgroundColor: '#FFFFFF',       
+          backgroundColor: '#FFFFFF',
           borderTopWidth: 1,
           borderTopColor: '#E5E5EA',
-          paddingBottom: 5,                 
+          paddingBottom: 5,
           height: 60,
         },
         tabBarLabelStyle: {
