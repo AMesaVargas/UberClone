@@ -1,0 +1,85 @@
+import { StyleSheet } from 'react-native';
+
+export default StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F9FAFB', // Fondo gris ultra claro y limpio
+    alignItems: 'center',
+    paddingTop: 50,
+    paddingHorizontal: 24,
+  },
+  avatarContainer: {
+    marginBottom: 20,
+    borderRadius: 60,
+    // Sombra suave para dar volumen (iOS)
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12,
+    // Sombra para Android
+    elevation: 4,
+  },
+  avatarImage: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    backgroundColor: '#E5E7EB',
+    borderWidth: 4,
+    borderColor: '#FFFFFF',
+  },
+  name: {
+    fontSize: 22,
+    fontWeight: '700',
+    color: '#111827',
+    marginBottom: 4,
+  },
+  email: {
+    fontSize: 14,
+    color: '#6B7280',
+    marginBottom: 36,
+  },
+  statsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+    marginBottom: 30,
+  },
+  statCard: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    paddingVertical: 20,
+    marginHorizontal: 8,
+    borderRadius: 16,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.04,
+    shadowRadius: 6,
+    elevation: 2,
+  },
+  statValue: {
+    fontSize: 22,
+    fontWeight: '700',
+    color: '#000000',
+    marginBottom: 4,
+  },
+  statLabel: {
+    fontSize: 13,
+    color: '#6B7280',
+    fontWeight: '500',
+  },
+  logoutButton: {
+    backgroundColor: '#EF4444', // Rojo sutil de alerta
+    width: '100%',
+    paddingVertical: 16,
+    borderRadius: 12,
+    alignItems: 'center',
+    marginTop: 'auto', // Empuja el botón al fondo de la pantalla
+    marginBottom: 24,
+  },
+  logoutText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+});

@@ -1,15 +1,11 @@
-import { MercadoPagoConfig, Preference } from 'mercadopago';
-
-const client = new MercadoPagoConfig({ 
-  accessToken: 'APP_USR-8590627879790571-051914-855a339fc904ac8b649efa0139e600fa-3412374161'
-});
+import 'react-native-get-random-values';
 
 const Payment_methods = {
   card: { name: 'Credit/Debit Card', icon: 'credit-card' },
   mercadopago: { name: 'Mercado Pago', icon: 'phone' },
 };
 
-export const validatePaymentForm = (formData) => {
+export const validatePaymentForm = formData => {
   const { paymentMethod, cardNumber } = formData;
 
   if (!paymentMethod || paymentMethod.trim() === '') {
@@ -34,7 +30,11 @@ export const validatePaymentForm = (formData) => {
   return { isValid: true, error: null };
 };
 
-export const processPayment = async (paymentMethod, amount, tripDetails = {}) => {
+export const processPayment = async (
+  paymentMethod,
+  amount,
+  tripDetails = {},
+) => {
   if (!amount || amount <= 0) {
     return { success: false, error: 'Amount is not valid' };
   }
@@ -43,39 +43,22 @@ export const processPayment = async (paymentMethod, amount, tripDetails = {}) =>
 
   if (paymentMethod === 'mercadopago') {
     try {
-      const preference = new Preference(client);
-      
-      const body = {
-        items: [
-          {
-            id: tripDetails.id || 'viaje-default',
-            title: `Viaje UberClone - ${tripDetails.origin || 'Origen'} a ${tripDetails.destination || 'Destino'}`,
-            quantity: 1,
-            unit_price: Number(amount),
-            currency_id: 'COP'
-          }
-        ],
-        back_urls: {
-          success: 'uberclone://payment-success',
-          failure: 'uberclone://payment-failure',
-          pending: 'uberclone://payment-pending'
-        },
-        auto_return: 'approved',
-      };
-
-      const response = await preference.create({ body });
+      const paymentLink = 'https://link.mercadopago.com.co/desarrollomovil';
 
       return {
         success: true,
-        message: 'Link de Mercado Pago de prueba generado con éxito',
+        message: 'Mercado Pago link generated',
         amount,
         paymentMethod,
-        urlPago: response.init_point
+        urlPago: paymentLink,
       };
-
     } catch (error) {
-      console.error('Error directo en Mercado Pago:', error);
-      return { success: false, error: 'Error al conectar con la pasarela de Mercado Pago' };
+      console.log('MERCADO PAGO ERROR:', error);
+
+      return {
+        success: false,
+        error: 'Error opening Mercado Pago',
+      };
     }
   }
 

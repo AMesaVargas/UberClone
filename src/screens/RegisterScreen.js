@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Picker } from '@react-native-picker/picker';
-
+import { useAuth } from '../context/AuthContext';
 import { registerFirebase, saveUser } from '../storage/FirestoreService';
 import { launchImageLibrary } from 'react-native-image-picker';
 import styles from '../styles/RegisterStyles';
@@ -24,6 +24,8 @@ const Register = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [language, setLanguage] = useState('');
+
+  const { login } = useAuth();
 
   const selectImage = async () => {
     const result = await launchImageLibrary({
@@ -56,6 +58,7 @@ const Register = ({ navigation }) => {
       }
 
       const uid = response.user.uid;
+      login(response.user);
 
       const saveResponse = await saveUser(uid, {
         photoUrl,
@@ -108,7 +111,7 @@ const Register = ({ navigation }) => {
 
       <Text style={styles.generalText}>Name</Text>
       <TextInput
-        placeholder="Name"
+        placeholder="Pepito Perez"
         placeholderTextColor="#888"
         value={name}
         onChangeText={setName}
@@ -117,7 +120,7 @@ const Register = ({ navigation }) => {
 
       <Text style={styles.generalText}>Phone Number</Text>
       <TextInput
-        placeholder="Phone Number"
+        placeholder="123456789"
         placeholderTextColor="#888"
         value={phoneNumber}
         onChangeText={setPhoneNumber}
@@ -141,7 +144,7 @@ const Register = ({ navigation }) => {
 
       <Text style={styles.generalText}>Email</Text>
       <TextInput
-        placeholder="Email"
+        placeholder="email@gmail.com"
         placeholderTextColor="#888"
         value={email}
         onChangeText={setEmail}
@@ -152,7 +155,7 @@ const Register = ({ navigation }) => {
 
       <Text style={styles.generalText}>Password</Text>
       <TextInput
-        placeholder="Password"
+        placeholder="*******"
         placeholderTextColor="#888"
         value={password}
         onChangeText={setPassword}

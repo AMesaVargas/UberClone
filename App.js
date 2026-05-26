@@ -1,40 +1,26 @@
 import React from 'react';
-
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AppNavigator from './src/routes/AppNavigator';
+import { AuthProvider } from './src/context/AuthContext';
+import { UserProvider } from './src/context/UserContext';
 
-import LoginScreen from './src/screens/LoginScreen';
-import RegisterScreen from './src/screens/RegisterScreen';
-
-import BottomTabs from './src/routes/BottomTabs';
-
-const Stack = createNativeStackNavigator();
-
-const AppNavigator = () => {
+const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{ headerShown: false }}
-        />
-
-        <Stack.Screen
-          name="Register"
-          component={RegisterScreen}
-          options={{ headerShown: false }}
-        />
-
-        <Stack.Screen
-          name="Main"
-          component={BottomTabs}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider>
+        <AuthProvider>
+          <UserProvider>
+            <NavigationContainer>
+              <AppNavigator />
+            </NavigationContainer>
+          </UserProvider>
+        </AuthProvider>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 };
 
-export default AppNavigator;
+export default App;

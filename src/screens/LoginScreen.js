@@ -11,13 +11,14 @@ import {
 } from 'react-native';
 
 import styles from '../styles/LoginStyles';
-
+import { useAuth } from '../context/AuthContext';
 import { loginFirebase } from '../storage/FirestoreService';
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
-
   const [password, setPassword] = useState('');
+
+  const { login } = useAuth();
 
   const handleLogin = async () => {
     try {
@@ -28,11 +29,11 @@ const LoginScreen = ({ navigation }) => {
         return;
       }
 
+      login(response.user);
+
       Alert.alert('Success', 'Successful Login');
 
       console.log('USER LOGGED');
-
-      navigation.replace('Main');
     } catch (error) {
       console.log(error);
 
@@ -52,7 +53,7 @@ const LoginScreen = ({ navigation }) => {
       <View>
         <Text style={styles.generalText}>Email</Text>
         <TextInput
-          placeholder="Email"
+          placeholder="email@gmail.com"
           value={email}
           onChangeText={setEmail}
           autoCapitalize="none"
@@ -64,7 +65,7 @@ const LoginScreen = ({ navigation }) => {
       <View>
         <Text style={styles.generalText}>Password</Text>
         <TextInput
-          placeholder="Pasword"
+          placeholder="*********"
           value={password}
           onChangeText={setPassword}
           secureTextEntry
