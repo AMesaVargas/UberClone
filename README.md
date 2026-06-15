@@ -1,51 +1,73 @@
-# uberClone
+# UberClone
 
-## Integrantes
+## Members
 
 Jhoner Alexander Mesa Vargas
- Yein Alexa Casas Velez
+Yein Alexa Casas Velez
  
-## Descripción
+## Description
 
-uberClone es una aplicación móvil de transporte desarrollada con React Native CLI para el Front-end y Node.js junto a Firebase para el Back-end. La aplicación permite gestionar usuarios, solicitar viajes en tiempo real, calcular rutas y procesar pagos de manera 100% real mediante la integración asíncrona de la pasarela de Mercado Pago. El proyecto sigue un patrón arquitectónico limpio basado en Controladores, Rutas y Servicios, utilizando Hooks nativos para el manejo dinámico del estado.
+uberClone is a mobile transportation application developed with React Native CLI for the Front-end and Node.js along with Firebase for the Back-end. The application manages user registration, login, and real-time trip requests. It handles multiple fare rates and integrates with the Google Maps API for navigation and real-time trip tracking. Additionally, it integrates the Mercado Pago API for 100% real payment processing. The system also includes a client rating system and full multi-language support (English and Spanish). The project follows a clean architectural pattern based on Controllers, Routes, and Services, using native Hooks for dynamic state management.
 
-## Instrucciones de instalación y ejecución
+## Installation and Execution Instructions
 
-### Clonar el repositorio
-
-git clone https://github.com/tu-usuario/uberClone.git
-cd uberClone
-
-### Instalar dependencias
-
+### Clone the repository
+```bash
+git clone https://github.com/tu-usuario/UberClone.git
+cd UberClone
+```
+### Install dependencies
+```bash
 npm install
+```
+### Install additional dependencies
 
-### Instalar dependencias adicionales
-
-# Navegación
+# Navigation
+```
 npm install @react-navigation/native
 npm install @react-navigation/native-stack
 npm install @react-navigation/bottom-tabs
 npm install react-native-screens
 npm install react-native-safe-area-context
-
-# Pasarela de Pagos y Componentes Web
+```
+# Payment Gateway and Web Components
+```
 npm install mercadopago
 npm install react-native-webview
 npm install react-native-vector-icons
+```
+### Android SDK Configuration (Only if connection errors occur)
 
-### Configuración del Android SDK (Solo si presenta errores de conexión)
+Create a file named local.properties inside the android folder 
+of the project and add your local Android SDK path:
 
-Crear un archivo llamado `local.properties` dentro de la carpeta `android` del proyecto y agregar la ruta local de tu Android SDK:
-`sdk.dir = C:\\Users\\TU_USUARIO\\AppData\\Local\\Android\\Sdk`
+`sdk.dir = C:\\Users\\YOUR_USER\\AppData\\Local\\Android\\Sdk`
 
-### Ejecutar la aplicación
+### Run the application
 
-1. Activar el modo desarrollador en el dispositivo móvil.
-2. Activar la depuración USB.
-3. Conectar el dispositivo al computador.
-4. Luego ejecutar en una terminal para inicializar Metro:
-   ```bash
-   npx react-native start
-   npx react- native run-android 
-   
+1. Enable developer mode on your mobile device.
+2. Enable USB debugging.
+3. Connect the device to your computer.
+
+Then run
+```
+npx react-native start
+
+```
+This is to initialize Metro.
+
+At another terminal
+```
+npx react-native run-android
+
+```
+This performs the respective execution and installation 
+of the application.
+
+### Technologies Used
+
+* JavaScript
+* React Native CLI
+* Node.js
+* React Navigation
+* Android SDK
