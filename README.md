@@ -2,12 +2,12 @@
 
 ## Members
 
-Jhoner Alexander Mesa Vargas
-Yein Alexa Casas Velez
+* Jhoner Alexander Mesa Vargas
+* Yein Alexa Casas Velez
  
 ## Description
 
-uberClone is a mobile transportation application developed with React Native CLI for the Front-end and Node.js along with Firebase for the Back-end. The application manages user registration, login, and real-time trip requests. It handles multiple fare rates and integrates with the Google Maps API for navigation and real-time trip tracking. Additionally, it integrates the Mercado Pago API for 100% real payment processing. The system also includes a client rating system and full multi-language support (English and Spanish). The project follows a clean architectural pattern based on Controllers, Routes, and Services, using native Hooks for dynamic state management.
+UberClone is a mobile transportation application developed with React Native CLI for the Front-end and Node.js along with Firebase for the Back-end. The application manages user registration, login, and real-time trip requests. It handles multiple fare rates and integrates with the Google Maps API for navigation and real-time trip tracking. Additionally, it integrates the Mercado Pago API for 100% real payment processing. The system also includes a client rating system and full multi-language support (English and Spanish). The project follows a clean architectural pattern based on Controllers, Routes, and Services, using native Hooks for dynamic state management.
 
 ## Installation and Execution Instructions
 
